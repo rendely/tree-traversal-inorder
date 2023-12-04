@@ -7,7 +7,11 @@ class Node {
 }
 
 function treeTraversalInorder(root) {
-  // type your code here
+  if (!root) return []
+  if (!root.left && !root.right) return [root.value]
+
+  return [...treeTraversalInorder(root.left), root.value, ...treeTraversalInorder(root.right)]
+
 }
 
 if (require.main === module) {
